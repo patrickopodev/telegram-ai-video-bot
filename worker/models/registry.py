@@ -1,6 +1,6 @@
-from models.ltx_loader import load_ltx, generate_ltx
-from models.cogvideox_loader import load_cogvideox, generate_cogvideox
-from models.wan_loader import load_wan, generate_wan
+from worker.models.ltx_loader import load_ltx, generate_ltx
+from worker.models.cogvideox_loader import load_cogvideox, generate_cogvideox
+from worker.models.wan_loader import load_wan, generate_wan
 
 LOADERS = {
     "ltx-video": (load_ltx, generate_ltx),
