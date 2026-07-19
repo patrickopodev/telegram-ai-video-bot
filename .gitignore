@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.env.local
+*.log
+
+# Models
+*.safetensors
+*.pth
+*.bin
+models/
+*.gguf
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
