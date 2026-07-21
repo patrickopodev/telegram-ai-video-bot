@@ -8,30 +8,37 @@ MODEL_REGISTRY = {
     "ltx-video": {
         "repo_id": "Lightricks/LTX-Video",
         "min_vram_gb": 8,
+        "patterns": ["ltx-video-2b*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "cogvideox-2b": {
         "repo_id": "THUDM/CogVideoX-2b",
         "min_vram_gb": 8,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "wan-1.3b": {
         "repo_id": "Wan-AI/Wan2.1-T2V-1.3B",
         "min_vram_gb": 8,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "wan-2.2-ti2v-5b": {
         "repo_id": "Wan-AI/Wan2.2-TI2V-5B",
         "min_vram_gb": 24,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "wan-dancer-14b": {
         "repo_id": "Wan-AI/Wan-Dancer-14B",
         "min_vram_gb": 48,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "hunyuanvideo": {
         "repo_id": "tencent/HunyuanVideo",
         "min_vram_gb": 45,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
     "mochi-1": {
         "repo_id": "genmo/mochi-1-preview",
         "min_vram_gb": 40,
+        "patterns": ["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
     },
 }
 
@@ -46,7 +53,7 @@ def download_model(name: str, dest_dir: str | None = None, token: str | None = N
         repo_id=cfg["repo_id"],
         local_dir=dest,
         token=token or os.environ.get("HF_TOKEN"),
-        allow_patterns=["*.safetensors", "*.json", "*.txt", "*.model", "*.pth"],
+        allow_patterns=cfg["patterns"],
     )
     print(f"Done: {name}")
 
