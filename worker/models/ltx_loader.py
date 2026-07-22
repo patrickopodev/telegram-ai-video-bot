@@ -1,3 +1,4 @@
+import os
 import torch
 from diffusers import LTXPipeline
 from diffusers.utils import export_to_video
@@ -6,7 +7,6 @@ MODEL_PATH = os.environ.get("MODELS_DIR", "./models")
 
 
 def load_ltx(model_name: str = "ltx-video"):
-    import os
     model_path = os.path.join(MODEL_PATH, model_name)
     pipe = LTXPipeline.from_pretrained(model_path, torch_dtype=torch.bfloat16)
     pipe.to("cuda")
